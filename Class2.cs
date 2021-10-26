@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Ionita_Andreea_Lab2
 {
-    class Class1
+    class Class2
     {
     }
 }
