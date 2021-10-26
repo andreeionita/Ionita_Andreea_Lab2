@@ -21,7 +21,7 @@
                     </Label.RenderTransform>
                 </Label>
                 <TextBox x:Name="txtGlazedRaised" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="120" IsReadOnly="True" Canvas.Left="65" Canvas.Top="10"/>
-                <TextBox x:Name="txtSugarRaised_" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="120" IsReadOnly="True" Canvas.Left="65" Canvas.Top="44"/>
+                <TextBox x:Name="txtSugarRaised" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="120" IsReadOnly="True" Canvas.Left="65" Canvas.Top="44"/>
                 <Label x:Name="lblSugarRaised" Content="Sugar" Canvas.Left="6" Canvas.Top="61" RenderTransformOrigin="-1.295,-0.114">
                     <Label.RenderTransform>
                         <TransformGroup>

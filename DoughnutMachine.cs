@@ -9,14 +9,6 @@ namespace Ionita_Andreea_Lab2
 {
     class DoughnutMachine
     {
-        public delegate void DoughnutCompleteDelegate();
-        public event DoughnutCompleteDelegate DoughnutComplete;
-        DispatcherTimer doughnutTimer;
-        private void InitializeComponent()
-        {
-            this.doughnutTimer = new DispatcherTimer();
-            this.doughnutTimer.Tick += new System.EventHandler(this.doughnutTimer_Tick);
-        }
         private DoughnutType mFlavor;
 
         public DoughnutType Flavor
@@ -25,14 +17,35 @@ namespace Ionita_Andreea_Lab2
             {
                 return mFlavor;
             }
+
             set
             {
                 mFlavor = value;
             }
         }
+
+        public delegate void DoughnutCompleteDelegate();
+
+        public event DoughnutCompleteDelegate DoughnutComplete;
+
+        DispatcherTimer doughnutTimer;
+
+        private void InitializeComponent()
+        {
+            this.doughnutTimer = new DispatcherTimer();
+
+            this.doughnutTimer.Tick += new System.EventHandler(this.doughnutTimer_Tick);
+        }
+
+        public DoughnutMachine()
+        {
+            InitializeComponent();
+        }
+
         private void doughnutTimer_Tick(object sender, EventArgs e)
         {
             Doughnut aDoughnut = new Doughnut(this.Flavor);
+
             DoughnutComplete();
         }
 
@@ -43,6 +56,7 @@ namespace Ionita_Andreea_Lab2
                 doughnutTimer.IsEnabled = value;
             }
         }
+
         public int Interval
         {
             set
@@ -53,19 +67,33 @@ namespace Ionita_Andreea_Lab2
 
         public void MakeDoughnuts(DoughnutType dFlavor)
         {
-
             Flavor = dFlavor;
+
             switch (Flavor)
             {
-                case DoughnutType.Glazed: Interval = 3; break;
-                case DoughnutType.Sugar: Interval = 2; break;
-                case DoughnutType.Lemon: Interval = 5; break;
-                case DoughnutType.Chocolate: Interval = 7; break;
+                case DoughnutType.Glazed:
+                    Interval = 3;
+                    break;
+
+                case DoughnutType.Sugar:
+                    Interval = 2;
+                    break;
+
+                case DoughnutType.Lemon:
+                    Interval = 5;
+                    break;
+
+                case DoughnutType.Chocolate:
+                    Interval = 7;
+                    break;
+
                 case DoughnutType.Vanilla: Interval = 4; break;
             }
+
             doughnutTimer.Start();
         }
     }
+
     public enum DoughnutType
     {
         Glazed,
@@ -74,21 +102,37 @@ namespace Ionita_Andreea_Lab2
         Chocolate,
         Vanilla
     }
+
     class Doughnut
     {
-        
-        private readonly DateTime mTimeOfCreation;
+        private DoughnutType mFlavor;
+
+        public DoughnutType Flavor
+        {
+            get
+            {
+                return mFlavor;
+            }
+
+            set
+            {
+                mFlavor = value;
+            }
+        }
+
+        private readonly DateTime mTimeofCreation;
+
         public DateTime TimeOfCreation
         {
             get
             {
-                return mTimeOfCreation;
+                return mTimeofCreation;
             }
-
         }
-        public Doughnut(DoughnutType aFlavor) // constructor
+
+        public Doughnut(DoughnutType aFlavor)
         {
-            mTimeOfCreation = DateTime.Now;
+            mTimeofCreation = DateTime.Now;
             mFlavor = aFlavor;
         }
     }
