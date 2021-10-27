@@ -99,8 +99,8 @@
                 <ComboBox x:Name="cmbType" Width="120" Canvas.Left="272" Canvas.Top="13" SelectionChanged="cmbType_SelectionChanged" />
                 <ListBox x:Name="lstSale" Height="59" Canvas.Left="10" Canvas.Top="39" Width="382"/>
                 <Button x:Name="btnAddToSale" Content="Add To Sale" Width="75" FontWeight="Normal" Canvas.Left="604" Canvas.Top="37" Click="btnAddToSale_Click"/>
-                <Button x:Name="btnRemoveItem" Content="Remove Item" Width="75" Canvas.Left="604" FontWeight="Normal" Canvas.Top="61" Click=" btnRemoveItem_Click" />
-                <Button x:Name="btnCheckOut" Content="Check Out " Width="75" Canvas.Left="604" FontWeight="Bold" Canvas.Top="117" Click=" btnCheckOut_Click" />
+                <Button x:Name="btnRemoveItem" Content="Remove Item" Width="75" Canvas.Left="604" FontWeight="Normal" Canvas.Top="61" Click="btnRemoveItem_Click" />
+                <Button x:Name="btnCheckOut" Content="Check Out " Width="75" Canvas.Left="604" FontWeight="Bold" Canvas.Top="117" Click="btnCheckOut_Click" />
                 <TextBox x:Name="txtTotal" Height="22" TextWrapping="Wrap" Text="0" Width="120" Canvas.Left="456" Canvas.Top="117" UndoLimit="0" IsReadOnly="True"/>
             </Canvas>
         </GroupBox>
@@ -122,7 +122,7 @@ Width="131" Margin="0,26,0,0">
                         <MenuItem x:Name="vanillaFilledMenuItem" Header="Vanilla"/>
                     </MenuItem>
 
-                    <MenuItem x:Name="mnuStop" Header="Stop" Click="stopToolStripMenuItem_Click" InputGestureText="Ctrl+S" Command = "CustomCommands:StopCommand.Launch" />
+                    <MenuItem x:Name="mnuStop" Header="Stop" Click="stopToolStripMenuItem_Click" InputGestureText="Ctrl+S" Command="CustomCommands:StopCommand.Launch" />
                     <MenuItem Header="Inventory" Command="ApplicationCommands.Print" ></MenuItem>
                 </MenuItem >
             </MenuItem>

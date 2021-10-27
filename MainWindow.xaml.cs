@@ -45,14 +45,13 @@ namespace Ionita_Andreea_Lab2
 
         private void frmMain_Loaded(object sender, RoutedEventArgs e)
         {
-            private void frmMain_Loaded(object sender, RoutedEventArgs e)  //aici e problema
-            {
+                    
                 myDoughnutMachine = new DoughnutMachine();
                 myDoughnutMachine.DoughnutComplete += new DoughnutMachine.DoughnutCompleteDelegate(DoughnutCompleteHandler);
                 cmbType.ItemsSource = PriceList;
                 cmbType.DisplayMemberPath = "Key";
                 cmbType.SelectedValuePath = "Value";
-            }
+            
         }
 
         private int mRaisedGlazed;
@@ -194,7 +193,7 @@ namespace Ionita_Andreea_Lab2
             return r;
         }
 
-        private void btnAdd_Click(object sender, RoutedEventArgs e)
+        private void btnAddToSale_Click(object sender, RoutedEventArgs e)
         {
             if (ValidateQuantity(selectedDoughnut) > 0)
             {
